@@ -1,6 +1,7 @@
 package org.example;
 
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
@@ -15,13 +16,20 @@ public class UI {
     private boolean startNewNumber = true;
 
     public void start(Stage stage) {
+        try {
+            Image icon = new Image(getClass().getResourceAsStream("/images/icon.png"));
+            stage.getIcons().add(icon);
+        } catch (Exception e) {
+            System.out.println("Icon not found");
+        }
+
         display.setEditable(false);
         display.setStyle("-fx-font-size: 24px; -fx-alignment: right;");
 
         GridPane grid = new GridPane();
         grid.setHgap(5);
         grid.setVgap(5);
-        
+ 
         String[] buttons = {
             "7", "8", "9", "/",
             "4", "5", "6", "*",
