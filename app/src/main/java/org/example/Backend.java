@@ -1,21 +1,21 @@
 package org.example;
 
-public class backend {
+public class Backend {
     // хорошая логика для калькулька что всё робит пуперски
-    public float calc(float first, float second, char ch){
-        float res = first;
+    public double calc(double first, double second, String ch){
+        double res = first;
         switch (ch) {
-            case '+':
+            case "+":
                  res += second;
                  break;
-             case '-':
+             case "-":
                  res -= second;
                  break;
-             case '*':
+             case "*":
                  res *= second;
                  break;
-             case '/':
-                try {
+             case "/":
+                try {              // я буду на это дрочить до конца жизни нахуй, это просто ахуенно
                     res /= second;
                 } catch (ArithmeticException e) {
                     System.out.println("You can`t divide by 0");
